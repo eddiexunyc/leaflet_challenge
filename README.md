@@ -50,4 +50,6 @@ Your first task is to visualize an earthquake data set.
 
    * Your visualization should look something like the map above.
 
+   ![5-StreetMap](Leaflet-Step-1/Images/USGS - Street Map.png)
+
 - - -
