@@ -46,7 +46,7 @@ Your first task is to visualize an earthquake data set.
 
    * Include popups that provide additional information about the earthquake when a marker is clicked.
 
-   ![5-DarkMap](Leaflet-Step-1/Images/"USGS-DarkMap.png")
+   ![5-DarkMap](Leaflet-Step-1/Images/USGS-DarkMap.png)
 
 
    * Create a legend that will provide context for your map data.
