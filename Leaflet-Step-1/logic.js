@@ -107,23 +107,24 @@ function createMap(earthquakes) {
   // Create a legend
   var legend = L.control({ position: "bottomright" });
   legend.onAdd = function() {
-    var div = L.DomUtil.create("div", "info legend");
+    var div = L.DomUtil.create("div", "info legend"), 
+      magnitudeGrades = [0, 1, 3, 5],
+      labels = [];
 
-    // Add min & max
-    var legendInfo = "<h1>Magnitude Legend</h1>" +
-      "<table><tr><th> > 5</th><td>Red</td></tr>" +
-      "<tr><th> > 3</th><td>Yellow</td></tr>" + 
-      "<tr><th> > 1</th><td>Blue</td></tr>" +
-      "<tr><th> < 1</th><td>Green</td></tr></table>";
+    
+    // Create legend
+    for (var i = 0; i < magnitudeGrades.length; i++) {
+        div.innerHTML +=
+            '<i style="background:' + markColor(magnitudeGrades[i] + 1) + '"></i> ' +
+            magnitudeGrades[i] + (magnitudeGrades[i + 1] ? '&ndash;' + magnitudeGrades[i + 1] + '<br>' : '+');
+    }
 
-    div.innerHTML = legendInfo;
+
     return div;
   };
 
   legend.addTo(myMap);
 
-  // Create a layer control
-  // Pass in our baseMaps and overlayMaps
   // Add the layer control to the map
   L.control.layers(baseMaps, overlayMaps, {
     collapsed: false
